@@ -1,6 +1,7 @@
 # Main program run here
 import sys
-
+import time
+import features.feature1 as feature1
 
 # Set up program
 class shop_item():
@@ -25,19 +26,38 @@ list_items = [
     shop_item('iphone12', 'blue')
 ]
 
+# print(list_items[0].__dict__)
+
 def main():
     """
 
     :return:
     """
+
+
+    print("""
+    Welcome to our Shop
+    Here are your options:
+        1. List all items 
+        2. List all info of a specific item 
+        3. Search item by name 
+        4. Search item by item id 
+        5. List all info of a specific customer
+        6. Placing orders
+
+
+        11. End program
+    """)
+
     try:
         feature_number = int(input("Please input your number that you would like to process with: "))
     except Exception:
         main()
 
     if feature_number == 1:
-        # feature_1(list_items)
-        pass
+        feature1.feature_1(list_items)
+        time.sleep(5)
+        main()
     # elif feature_number == 2:
     #     feature_2(list_items)
     # elif feature_number == 3:
@@ -60,20 +80,5 @@ def main():
         sys.exit()
     else:
         main()
-
-
-print("""
-Welcome to our Shop
-Here are your options:
-    1. List all items 
-    2. List all info of a specific item 
-    3. Search item by name 
-    4. Search item by item id 
-    5. List all info of a specific customer
-    6. Placing orders
-    
-    
-    11. End program
-""")
 
 main()

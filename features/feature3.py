@@ -1,4 +1,5 @@
 from .feature2 import feature_2
+from .util import is_valid_op
 
 
 def feature_3(arr):
@@ -16,4 +17,6 @@ def feature_3(arr):
             feature_2(arr, item_obj)
 
     if not item_founded:
-        print('Can not find this item, please try again later.')
+        print(f'Can not find this item with name of {user_input_name}.')
+
+        is_valid_op(feature_3, arr)

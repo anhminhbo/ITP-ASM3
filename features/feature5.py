@@ -27,6 +27,3 @@ customers = [
 def feature_5(customer_list):
     for i in customer_list:
         i.show_customer_info()
-
-
-feature_5(customers)

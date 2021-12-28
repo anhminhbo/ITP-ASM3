@@ -5,6 +5,7 @@ import features.feature1 as feature1
 import features.feature3 as feature3
 import features.feature4 as feature4
 import features.feature5 as feature5
+import features.feature6 as feature6
 
 # Set up program
 
@@ -38,9 +39,9 @@ def main():
 Welcome to our Shop
 Here are your options:
     1. List all items 
-    2. List all info of a specific item 
-    3. Search item by name 
-    4. Search item by item id 
+    2. List all info of a specific item  --> got embedded into feature3 and feature4, PLEASE DONT USE THIS
+    3. Search item by name and list all info of that specific item 
+    4. Search item by item id and list all info of that specific item 
     5. List all info of a specific customer
     6. Placing orders
     7.
@@ -77,10 +78,10 @@ Here are your options:
         feature5.feature_5(feature5.customers)
         time.sleep(5)
         main()
-    # elif feature_number == 6:
-    #     feature_6(list_shop_items)
-    #     time.sleep(5)
-    #     main()
+    elif feature_number == 6:
+        feature6.feature_6(list_shop_items, feature5.customers)
+        time.sleep(5)
+        main()
     # elif feature_number == 7:
     #     feature_7(list_shop_items)
     #     time.sleep(5)
@@ -103,4 +104,5 @@ Here are your options:
         main()
 
 
-main()
+if __name__ == "__main__":
+    main()

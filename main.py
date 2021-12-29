@@ -1,11 +1,11 @@
 # Main program run here
 import sys
 import time
-import features.feature1 as feature1
-import features.feature3 as feature3
-import features.feature4 as feature4
-import features.feature5 as feature5
-import features.feature6 as feature6
+import feature1 as feature1
+import feature3 as feature3
+import feature4 as feature4
+import feature5 as feature5
+import feature6 as feature6
 
 # Set up program
 
@@ -67,11 +67,11 @@ Here are your options:
     #     time.sleep(5)
     #     main()
     elif feature_number == 3:
-        feature3.feature_3(list_shop_items)
+        feature3.feature_3(list_shop_items,main)
         time.sleep(5)
         main()
     elif feature_number == 4:
-        feature4.feature_4(list_shop_items)
+        feature4.feature_4(list_shop_items,main)
         time.sleep(5)
         main()
     elif feature_number == 5:
@@ -79,7 +79,7 @@ Here are your options:
         time.sleep(5)
         main()
     elif feature_number == 6:
-        feature6.feature_6(list_shop_items, feature5.customers)
+        feature6.feature_6(list_shop_items,main, feature5.customers)
         time.sleep(5)
         main()
     # elif feature_number == 7:

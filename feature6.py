@@ -1,5 +1,5 @@
 import time
-from .util import is_valid_op
+from util import is_valid_op
 
 
 class ShopItem:
@@ -20,7 +20,7 @@ list_shop_items = [
     ]
 
 
-def feature_6(arr, cus_list):
+def feature_6(arr,main_func, cus_list):
     """
     :param cus_list: input list of customers
     :param arr: input list of items
@@ -40,15 +40,19 @@ def feature_6(arr, cus_list):
                 item_existed = True
                 if buy_qtt > item_obj.quantity:
                     print(f'The quantity of goods is not enough, only {item_obj.quantity} left.')
-                    is_valid_op(feature_6, arr, cus_list)
+                    is_valid_op(feature_6,main_func, arr, cus_list)
                 else:
-                    while True:
-                        try:
-                            cus_id = int(input("The number of your desired product is sufficient."
-                                               " Please input your customer id: "))
-                            break
-                        except ValueError:
-                            print('Invalid customer id.')
+                    def input_cust_id():
+                        while True:
+                            try:
+                                cus_id = int(input("The number of your desired product is sufficient."
+                                               " Please input your customer id: "))    
+                                break
+                            except ValueError:
+                                print('Invalid customer id.')
+                                is_valid_op(input_cust_id, main_func)
+                    
+                    input_cust_id()
 
                     item_obj.quantity -= buy_qtt
                     for cus_obj in cus_list:
@@ -57,12 +61,13 @@ def feature_6(arr, cus_list):
                             print(f"{cus_obj.name}'s order is successfully done.")
                     if not cust_existed:
                         print(f'your customer id of {cus_id} does not exist.')
-                        is_valid_op(feature_6, arr, cus_list)
+                        is_valid_op(feature_6,main_func, arr, cus_list)
                     break
 
         if not item_existed:
             print(f'this item with id of {pro_id} not exist in the shop.')
-            is_valid_op(feature_6, arr, cus_list)
+            is_valid_op(feature_6,main_func, arr, cus_list)
+            
     except ValueError:
         print('item id or desired quantity is invalid.')
-        is_valid_op(feature_6, arr, cus_list)
+        is_valid_op(feature_6,main_func, arr, cus_list)

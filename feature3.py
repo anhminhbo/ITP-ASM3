@@ -1,11 +1,12 @@
-from .feature2 import feature_2
-from .util import is_valid_op
+from feature2 import feature_2
+from util import is_valid_op
 
 
-def feature_3(arr):
+def feature_3(arr, main_func):
     """
     Search item by name and show the info of the item
     :param arr: input list of items
+    :param main_func: main function of the program
     :return: none
     """
     user_input_name = input("Please input the item's name: ")
@@ -19,4 +20,4 @@ def feature_3(arr):
     if not item_founded:
         print(f'Can not find this item with name of {user_input_name}.')
 
-        is_valid_op(feature_3, arr)
+        is_valid_op(feature_3,main_func, arr)

@@ -17,8 +17,7 @@ def is_valid_op(fn,main_func, *args):
             elif len(args) == 3:
                 fn(args[0],main_func, args[1], args[2])
             elif len(args) == 0:
-                result = fn()
-                return result
+                fn()
 
         elif user_choice == 'n':
             is_valid_operation = True

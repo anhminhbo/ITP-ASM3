@@ -15,17 +15,18 @@ import feature6 as feature6
 class ShopItem:
     shop_item_counter = 1
 
-    def __init__(self, name, color, quantity=10):
+    def __init__(self, name, color, price=0, quantity=10):
         self.id = ShopItem.shop_item_counter
         self.name = name
         self.quantity = quantity
         self.color = color
+        self.price = price
         # Increment id by 1 everytime we create a new obj
         ShopItem.shop_item_counter += 1
 
 
 list_shop_items = [
-    ShopItem('iphone11', 'red'),
+    ShopItem('iphone11', 'red', 10000000),
     ShopItem('iphone12', 'blue'),
     ShopItem('iphone6s', 'black'),
     ShopItem('iphone7', 'black'),

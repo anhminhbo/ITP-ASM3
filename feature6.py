@@ -1,5 +1,5 @@
 import time
-from util import is_valid_op
+from util import is_valid_op,checkInt
 
 
 class ShopItem:
@@ -30,8 +30,6 @@ def feature_6(arr, main_func, cus_list):
     """
     item_existed = False
 
-    cust_existed = False
-
     try:
         pro_id = int(input("Please input the item's id: "))
         buy_qtt = int(input("Please input your desired quantity: "))
@@ -45,28 +43,28 @@ def feature_6(arr, main_func, cus_list):
                     is_valid_op(feature_6, main_func, arr, cus_list)
                 else:
                     def input_cust_id():
-                        while True:
-                            try:
-                                cust_id = int(input("The number of your desired product is sufficient."
-                                                    " Please input your customer id: "))
-                                return cust_id
-                            except ValueError:
-                                print('Invalid customer id.')
+                        cust_existed = False
+                        cust_id = input("The number of your desired product is sufficient."
+                                            " Please input your customer id: ")
+                        is_cust_id_int = checkInt(cust_id)
+                        if is_cust_id_int:
+                            for cus_obj in cus_list:
+                                if cus_obj.id == int(cust_id):
+                                    cust_existed = True
+                                    print(f"Total price: {int(item_obj.price * buy_qtt)}")
+                                    print("Processing...")
+                                    time.sleep(1)
+                                    print(f"{cus_obj.name}'s order is successfully done.")
+
+                                    item_obj.quantity -= buy_qtt
+                            if not cust_existed:
+                                print(f'your customer id of {cust_id} does not exist.')
                                 is_valid_op(input_cust_id, main_func)
+                        else:
+                            print('Invalid customer id.')
+                            is_valid_op(input_cust_id, main_func)
 
-                    cus_id = input_cust_id()
-
-                    item_obj.quantity -= buy_qtt
-                    for cus_obj in cus_list:
-                        if cus_obj.id == cus_id:
-                            cust_existed = True
-                            print(f"Total price: {int(item_obj.price*buy_qtt)}")
-                            print("Processing...")
-                            time.sleep(1)
-                            print(f"{cus_obj.name}'s order is successfully done.")
-                    if not cust_existed:
-                        print(f'your customer id of {cus_id} does not exist.')
-                        is_valid_op(feature_6, main_func, arr, cus_list)
+                    input_cust_id()
                     break
 
         if not item_existed:

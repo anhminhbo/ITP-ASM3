@@ -3,9 +3,9 @@ import time
 
 
 def restock_condition(y):
+    goods = int(input("Quantities of goods: "))
     if y.quantity == 0:
         time_needed = random.randint(30, 100)
-        goods = int(input("Quantities of goods: "))
         restock_counter(time_needed)
         y.quantity += goods
 

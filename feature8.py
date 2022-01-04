@@ -1,5 +1,5 @@
 import random
-#hello
+#hello world
 
 def restock_counter():
     restock = random.randint(1, 20)

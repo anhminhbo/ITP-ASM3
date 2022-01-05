@@ -1,6 +1,14 @@
 import time
-
 import feature5 as feature5
+import re
+
+# Make a regular expression for validating an Email
+regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
+
+# Define a function for validating an Email
+def is_valid_email(email):
+    # pass the regular expression and the string into the fullmatch() method
+    return re.fullmatch(regex, email)
 
 
 def has_numbers(string):
@@ -17,7 +25,14 @@ def feature_10():
         print("Your input is invalid. Please input again.")
         feature_10()
         return 0
-    email_add = input("Please input your email address (your_email@example.com): ")
+    email_add = "x"
+    while not is_valid_email(email_add):
+        email_add = input("Please input your email address (your_email@example.com): ")
+        if not is_valid_email(email_add):
+            print("Your input is invalid. Please input again.")
+            time.sleep(0.5)
+        else:
+            break
     ship_add = input("Please input your address: ")
     ph_num = "A"
     while has_letters(ph_num):

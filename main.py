@@ -6,6 +6,7 @@ import feature3 as feature3
 import feature4 as feature4
 import feature5 as feature5
 import feature6 as feature6
+import feature10 as feature10
 
 # Set up program
 
@@ -59,7 +60,7 @@ Here are your options:
     7.
     8.
     9.
-    10.
+    10. Add new member
     11. End program
     """)
 
@@ -72,44 +73,54 @@ Here are your options:
 
     if feature_number == 1:
         feature1.feature_1(list_shop_items)
+        print("\nYour process is done. Returning back...")
         time.sleep(5)
         main()
     # elif feature_number == 2:
     #     feature2.feature_2(list_shop_items)
+    #     print("\nYour process is done. Returning back...")
     #     time.sleep(5)
     #     main()
     elif feature_number == 3:
-        feature3.feature_3(list_shop_items,main)
+        feature3.feature_3(list_shop_items, main)
+        print("\nYour process is done. Returning back...")
         time.sleep(5)
         main()
     elif feature_number == 4:
-        feature4.feature_4(list_shop_items,main)
+        feature4.feature_4(list_shop_items, main)
+        print("\nYour process is done. Returning back...")
         time.sleep(5)
         main()
     elif feature_number == 5:
         feature5.feature_5(feature5.customers)
+        print("\nYour process is done. Returning back...")
         time.sleep(5)
         main()
     elif feature_number == 6:
-        feature6.feature_6(list_shop_items,main, feature5.customers)
+        feature6.feature_6(list_shop_items, main, feature5.customers)
+        print("\nYour process is done. Returning back...")
         time.sleep(5)
         main()
     # elif feature_number == 7:
     #     feature_7(list_shop_items)
+    #     print("\nYour process is done. Returning back...")
     #     time.sleep(5)
     #     main()
     # elif feature_number == 8:
     #     feature_8(list_shop_items)
+    #     print("\nYour process is done. Returning back...")
     #     time.sleep(5)
     #     main()
     # elif feature_number == 9:
     #     feature_9(list_shop_items)
+    #     print("\nYour process is done. Returning back...")
     #     time.sleep(5)
     #     main()
-    # elif feature_number == 10:
-    #     feature_10(list_shop_items)
-    #     time.sleep(5)
-    #     main()
+    elif feature_number == 10:
+        feature10.feature_10()
+        print("\nYour process is done. Returning back...")
+        time.sleep(5)
+        main()
     elif feature_number == 11:
         sys.exit()
     else:

@@ -6,6 +6,7 @@ import feature3 as feature3
 import feature4 as feature4
 import feature5 as feature5
 import feature6 as feature6
+import feature9 as feature9
 import feature10 as feature10
 
 # Set up program

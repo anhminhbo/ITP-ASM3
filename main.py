@@ -59,7 +59,7 @@ Here are your options:
     5. List all info of a specific customer
     6. Placing orders
     7.
-    8.
+    8. Restock all the goods (notice if the goods is sufficient)
     9.
     10. Add new member
     11. End program

@@ -28,7 +28,7 @@ class ShopItem:
 
 
 list_shop_items = [
-    ShopItem('iphone11', 'red', 10000000, 0),
+    ShopItem('iphone11', 'red', 10000000, 10),
     ShopItem('iphone12', 'blue'),
     ShopItem('iphone6s', 'black'),
     ShopItem('iphone7', 'black'),
@@ -59,7 +59,7 @@ Here are your options:
     5. List all info of a specific customer
     6. Placing orders
     7.
-    8.
+    8. Restock all the goods (notice if the goods is sufficient)
     9.
     10. Add new member
     11. End program

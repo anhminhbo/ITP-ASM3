@@ -29,8 +29,9 @@ customers = [
     Customer("Minh Nguyen", "s3931605@rmit.edu.vn", "ABCS", "9334378563485")
 ]
 
-
 def feature_5(customer_list):
     for i in customer_list:
         i.show_customer_info()
 
+# Make a file to store customer info
+# Add 1 one property that is TotalProductsHasBeenBought

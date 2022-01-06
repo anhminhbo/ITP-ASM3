@@ -1,0 +1,1 @@
+# Discount -> 1 property for Customer , 3=> 10%

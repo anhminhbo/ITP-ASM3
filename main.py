@@ -6,6 +6,7 @@ import feature3 as feature3
 import feature4 as feature4
 import feature5 as feature5
 import feature6 as feature6
+import feature8 as feature8
 import feature10 as feature10
 
 # Set up program
@@ -27,7 +28,7 @@ class ShopItem:
 
 
 list_shop_items = [
-    ShopItem('iphone11', 'red', 10000000),
+    ShopItem('iphone11', 'red', 10000000, 0),
     ShopItem('iphone12', 'blue'),
     ShopItem('iphone6s', 'black'),
     ShopItem('iphone7', 'black'),
@@ -106,11 +107,11 @@ Here are your options:
     #     print("\nYour process is done. Returning back...")
     #     time.sleep(5)
     #     main()
-    # elif feature_number == 8:
-    #     feature_8(list_shop_items)
-    #     print("\nYour process is done. Returning back...")
-    #     time.sleep(5)
-    #     main()
+    elif feature_number == 8:
+        feature8.restock_condition(list_shop_items)
+        print("\nYour process is done. Returning back...")
+        time.sleep(5)
+        main()
     # elif feature_number == 9:
     #     feature_9(list_shop_items)
     #     print("\nYour process is done. Returning back...")

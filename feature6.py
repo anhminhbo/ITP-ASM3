@@ -1,5 +1,5 @@
 import time
-from util import is_valid_op,checkInt
+from util import is_valid_op, checkInt
 
 
 class ShopItem:
@@ -45,7 +45,7 @@ def feature_6(arr, main_func, cus_list):
                     def input_cust_id():
                         cust_existed = False
                         cust_id = input("The number of your desired product is sufficient."
-                                            " Please input your customer id: ")
+                                        " Please input your customer id: ")
                         is_cust_id_int = checkInt(cust_id)
                         if is_cust_id_int:
                             for cus_obj in cus_list:
@@ -54,7 +54,7 @@ def feature_6(arr, main_func, cus_list):
                                     print(f"Total price: {int(item_obj.price * buy_qtt)}")
                                     print("Processing...")
                                     time.sleep(1)
-                                    print(f"{cus_obj.name}'s order is successfully done.")
+                                    print(f"{cus_obj.first_name}'s order is successfully done.")
 
                                     item_obj.quantity -= buy_qtt
                             if not cust_existed:

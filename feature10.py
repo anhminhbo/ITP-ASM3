@@ -18,6 +18,7 @@ def is_full_name(string):
 
 
 def feature_10():
+    # Input name of new customer and validate input
     name = "1"
     while not (util.is_letters(name) and is_full_name(name)):
         name = input("Please input your name (first name + last name): ")
@@ -26,6 +27,8 @@ def feature_10():
             time.sleep(0.5)
         else:
             break
+
+    # Input email address of new customer and validate input
     email_add = "x"
     while not is_valid_email(email_add):
         email_add = input("Please input your email address (your_email@example.com): ")
@@ -34,7 +37,11 @@ def feature_10():
             time.sleep(0.5)
         else:
             break
+
+    # Input shipping address of new customer
     ship_add = input("Please input your address: ")
+
+    # Input phone number of new customer and validate input
     ph_num = "A"
     while not util.is_numbers(ph_num):
         ph_num = input("Please input your phone number: ")
@@ -43,7 +50,26 @@ def feature_10():
             time.sleep(0.5)
         else:
             break
-    feature5.customers.append(feature5.Customer(name, email_add, ship_add, ph_num))
+
+    # Convert data
+
+    data = name + " | " + email_add + " | " + ship_add + " | " + ph_num + " | 0 \n"
+
+    # Add new customer in database
+    cus_data = open("customer.txt", "r")
+    lines = cus_data.readlines()
+    cus_data.close()
+
+    # Add data into database
+    lines.append(data)
+    cus_data = open("customer.txt", "w")
+    cus_data.writelines(lines)
+    cus_data.close()
+
+    # Refresh the database
+    feature5.customers = feature5.refresh_customer_data()
+
+    # Double check the information
     ch = input(f"Your information has been added. Your id is {feature5.take_id()}. Please remember your id to "
                f"place order. Do you want to check (Y/N)? ")
     if ch == "Y" or ch == "y":

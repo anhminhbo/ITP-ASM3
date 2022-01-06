@@ -28,7 +28,7 @@ class ShopItem:
 
 
 list_shop_items = [
-    ShopItem('iphone11', 'red', 10000000, 0),
+    ShopItem('iphone11', 'red', 10000000, 10),
     ShopItem('iphone12', 'blue'),
     ShopItem('iphone6s', 'black'),
     ShopItem('iphone7', 'black'),

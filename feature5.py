@@ -30,9 +30,6 @@ class Customer:
         Accumulated amount of spent money: {self.accumulated_amount}""")
 
 
-customers = []
-
-
 def refresh_customer_data():
     cust = []
     reset_id()

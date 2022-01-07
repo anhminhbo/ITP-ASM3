@@ -1,6 +1,14 @@
 import time
 
 
+def is_numbers(string):
+    return all(char.isdigit() for char in string)
+
+
+def is_letters(string):
+    return any(char.isalpha() for char in string)
+
+
 def is_valid_op(fn, main_func, *args):
     """
     :param main_func:

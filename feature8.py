@@ -1,3 +1,11 @@
+# RMIT University Vietnam
+# Course: COSC2429 Introduction to Programming
+# Semester: 2021C
+# Assignment: 3
+# Author: Vu Quoc Gia Quan (s3927120)
+# Created date:
+# Last modified date:
+
 import random
 import time
 

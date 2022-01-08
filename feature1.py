@@ -36,5 +36,7 @@ def feature_1(arr):
 
     # Each item in table_list is a row in the table
     table.add_rows(table_list)
+    table.set_cols_dtype(["a", "a", "a", "a", "i"])
+    table.set_cols_width([2, 20, 10, 20, 10])
 
     print(table.draw())

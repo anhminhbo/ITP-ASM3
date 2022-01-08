@@ -10,19 +10,49 @@ import random
 import time
 
 
-def restock_condition(y):
-    goods = int(input("Quantities of goods: "))
-    if y.quantity == 0:
-        time_needed = random.randint(30, 100)
-        restock_counter(time_needed)
-        y.quantity += goods
+def has_letters(string):
+    return any(char.isalpha() for char in string)
+
+
+def restock_condition(list_obj):
+    """
+    :param list_obj: list of goods
+    :return: none
+    """
+
+    goods = "A"
+    while has_letters(goods):
+        goods = input("Quantity of goods: ")
+        if has_letters(goods):
+            print("Your input is invalid. Please input again.")
+            time.sleep(0.5)
+        else:
+            break
+
+    goods = int(goods)
+    restocked = False
+    for obj in list_obj:
+        if obj.quantity == 0:
+            restocked = True
+            time_needed = random.randint(5, 10)
+            restock_counter(time_needed)
+            obj.quantity += goods
+    if not restocked:
+        print("The remaining goods is sufficient. No need to restock.")
 
 
 def restock_counter(t):
-    while t:
+    """
+    :param t: time in sec
+    :return: none
+    """
+    while not t == -1:
         mins, secs = divmod(t, 60)
         timer = '{:02d}:{:02d}'.format(mins, secs)
-        print(timer, end="\r")
-        time.sleep(1)
         t -= 1
-    print("Finish restocking")
+        if not t == -1:
+            print('Time remaining until restocked: ', timer, end="\r")
+        else:
+            print('Time remaining until restocked: ', timer, end="\n")
+        time.sleep(1)
+    print("Finish restocking.")

@@ -5,3 +5,6 @@
 # Author: Truong Hoang Tuan Kiet (s3926873)
 # Created date:
 # Last modified date:
+
+# Discount -> 1 property for Customer , 3=> 10%
+

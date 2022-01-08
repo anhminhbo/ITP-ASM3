@@ -15,7 +15,9 @@ import feature4 as feature4
 import feature5 as feature5
 import feature6 as feature6
 import feature9 as feature9
+import feature8 as feature8
 import feature10 as feature10
+
 
 # Set up program
 
@@ -74,7 +76,7 @@ Here are your options:
     5. List all info of a specific customer
     6. Placing orders
     7.
-    8. Restock counter and timer
+    8. Restock all the goods (notice if the goods is sufficient)
     9. Membership and discount
     10. Add new member
     11. End program
@@ -122,11 +124,11 @@ Here are your options:
     #     print("\nYour process is done. Returning back...")
     #     time.sleep(5)
     #     main()
-    # elif feature_number == 8:
-    #     feature_8(list_shop_items)
-    #     print("\nYour process is done. Returning back...")
-    #     time.sleep(5)
-    #     main()
+    elif feature_number == 8:
+        feature8.restock_condition(list_shop_items)
+        print("\nYour process is done. Returning back...")
+        time.sleep(5)
+        main()
     # elif feature_number == 9:
     #     feature_9(list_shop_items)
     #     print("\nYour process is done. Returning back...")

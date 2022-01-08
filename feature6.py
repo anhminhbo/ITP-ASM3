@@ -7,6 +7,7 @@
 # Last modified date:
 
 import time
+import feature5 as feature5
 from util import is_valid_op, checkInt
 
 
@@ -63,8 +64,21 @@ def feature_6(arr, main_func, cus_list):
                                     print("Processing...")
                                     time.sleep(1)
                                     print(f"{cus_obj.first_name}'s order is successfully done.")
-
                                     item_obj.quantity -= buy_qtt
+
+                                    # Update accumulated money in database
+                                    cust_data = open("customer.txt", "r")
+                                    lines = cust_data.readlines()
+                                    cust_data.close()
+                                    pro = lines[cus_obj.id-1].split(" | ")
+                                    pro[4] = str(int(pro[4]) + item_obj.price * buy_qtt) + "\n"
+                                    lines[cus_obj.id-1] = " | ".join(pro)
+
+                                    cust_data = open("customer.txt", "w")
+                                    cust_data.writelines(lines)
+                                    cust_data.close()
+                                    feature5.customers = feature5.refresh_customer_data()
+
                             if not cust_existed:
                                 print(f'your customer id of {cust_id} does not exist.')
                                 is_valid_op(input_cust_id, main_func)

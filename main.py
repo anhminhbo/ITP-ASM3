@@ -1,3 +1,11 @@
+# RMIT University Vietnam
+# Course: COSC2429 Introduction to Programming
+# Semester: 2021C
+# Assignment: 3
+# Author: SGS_Group11_3
+# Created date:
+# Last modified date:
+
 # Main program run here
 import sys
 import time
@@ -28,19 +36,26 @@ class ShopItem:
 
 
 list_shop_items = [
-    ShopItem('iphone11', 'red', 10000000),
-    ShopItem('iphone12', 'blue'),
-    ShopItem('iphone6s', 'black'),
-    ShopItem('iphone7', 'black'),
-    ShopItem('Gao phone', 'killer red limited edition'),
-    ShopItem('Orga driver', 'black on gold'),
-    ShopItem('Gao phone', 'victory gold'),
-    ShopItem('Samsung Galaxy S21 Ultra','black',45000000),
-    ShopItem('iPhone 13 Pro Max', 'blue', 67000000),
-    ShopItem('Samsung Galaxy S21 Plus', 'black', 75000000),
-    ShopItem('Nokia rock-smasher 1100', 'black', 999999999999),
-    ShopItem('iPhone 6 Falcon Supernova Pink Diamond', 'gold', 123456789987654321),
-
+    ShopItem('Iphone 11', 'Red', 11900000),
+    ShopItem('Iphone 12 mini', 'Blue', 15500000),
+    ShopItem('Iphone 6s', 'Black', 3500000),
+    ShopItem('Iphone 7', 'Black', 4500000),
+    ShopItem('Iphone X', 'Silver', 8000000),
+    ShopItem('Iphone 12 Pro', 'Rose Gold', 19000000),
+    ShopItem('iPhone 13 Pro Max', 'Blue', 60000000),
+    ShopItem('Samsung Galaxy S8', 'White', 6500000),
+    ShopItem('Samsung Galaxy S21 Ultra', 'Black', 25100000),
+    ShopItem('Samsung Galaxy A12', 'Black', 3600000),
+    ShopItem('Samsung Galaxy Z Fold3', 'Black', 43000000),
+    ShopItem('Samsung Galaxy Z Flip3', 'Rose Gold', 26000000),
+    ShopItem('Oppo A15s', 'Navy Blue', 4000000),
+    ShopItem('Oppo Reno5 5G', 'Silver', 10000000),
+    ShopItem('Xiaomi Redmi Note 10', 'Gold', 7300000),
+    ShopItem('Xiaomi 11 5G', 'Silver', 14000000),
+    ShopItem('Xiaomi Redmi 9A', 'Green', 2500000),
+    ShopItem('Nokia C20', 'Black', 2000000),
+    ShopItem('Nokia 8.3 5G', 'Silver', 9000000),
+    ShopItem('Vivo V20 SE', 'Grey', 5500000)
 ]
 
 
@@ -59,8 +74,8 @@ Here are your options:
     5. List all info of a specific customer
     6. Placing orders
     7.
-    8.
-    9.
+    8. Restock counter and timer
+    9. Membership and discount
     10. Add new member
     11. End program
     """)

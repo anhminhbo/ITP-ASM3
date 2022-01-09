@@ -26,6 +26,10 @@ def is_full_name(string):
 
 
 def feature_10():
+    """
+    This function created to add new member to our shop
+    :return: none
+    """
     # Input name of new customer and validate input
     name = "1"
     while not (util.is_letters(name) and is_full_name(name)):

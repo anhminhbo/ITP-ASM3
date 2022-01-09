@@ -12,7 +12,7 @@ from util import is_valid_op
 
 def feature_4(arr,main_func):
     """
-    Search item by name and show the info of the item
+    This function created to search item by name and show the information of the item
     :param arr: input list of items
     :param main_func: main function of the program
     :return: none

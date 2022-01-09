@@ -10,7 +10,7 @@ from texttable import Texttable
 
 def feature_1(arr):
     """
-    show all the items' name in the shop
+    This function created to show all the item's name in the shop
     :param arr: input list of items
     :return: none
     """

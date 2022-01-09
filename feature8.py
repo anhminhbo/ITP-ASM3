@@ -16,6 +16,7 @@ def has_letters(string):
 
 def restock_condition(list_obj):
     """
+    This function created to restock the out of stock product
     :param list_obj: list of goods
     :return: none
     """
@@ -43,6 +44,7 @@ def restock_condition(list_obj):
 
 def restock_counter(t):
     """
+    This function created to show the time remaining for restocking the product
     :param t: time in sec
     :return: none
     """

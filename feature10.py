@@ -79,7 +79,3 @@ def feature_10():
 
 
 # feature_10()
-
-# Read from file
-# Check if customer is registered -> y -> you already a member of our shop
-# n --> process input

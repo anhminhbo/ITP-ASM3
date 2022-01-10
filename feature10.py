@@ -10,6 +10,7 @@ import time
 import feature5 as feature5
 import re
 import util
+import db
 
 # Make a regular expression for validating an Email
 regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
@@ -54,10 +55,10 @@ def feature_10():
     ship_add = input("Please input your address: ")
 
     # Input phone number of new customer and validate input
-    ph_num = "A"
-    while not util.is_numbers(ph_num):
+    ph_num = ""
+    while not util.is_numbers(ph_num) or ph_num == "":
         ph_num = input("Please input your phone number: ")
-        if not util.is_numbers(ph_num):
+        if not util.is_numbers(ph_num) or ph_num == "":
             print("Your input is invalid. Please input again.")
             time.sleep(0.5)
         else:
@@ -67,16 +68,12 @@ def feature_10():
 
     data = name + " | " + email_add + " | " + ship_add + " | " + ph_num + " | 0 \n"
 
-    # Add new customer in database
-    cus_data = open("customer.txt", "r")
-    lines = cus_data.readlines()
-    cus_data.close()
+    # Store new customer info by reading old data and then update
+    lines = db.read_info("customer.txt")
 
-    # Add data into database
     lines.append(data)
-    cus_data = open("customer.txt", "w")
-    cus_data.writelines(lines)
-    cus_data.close()
+
+    db.write_info("customer.txt", lines)
 
     # Refresh the database
     feature5.customers = feature5.refresh_customer_data()

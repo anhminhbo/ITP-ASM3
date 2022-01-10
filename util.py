@@ -40,8 +40,9 @@ def is_valid_op(fn, main_func, *args):
 
 def checkInt(text):
     """
-    :param text:
-    :return:
+    This function to check if a text can be converted to int
+    :param text: input text to checked
+    :return: True if it does not throw error when converted to int and vice versa
     """
     if text[0] in ('-', '+'):
         return text[1:].isdigit()

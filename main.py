@@ -58,7 +58,7 @@ list_shop_items = [
     ShopItem('Xiaomi Redmi 9A', 'Green', 2500000),
     ShopItem('Nokia C20', 'Black', 2000000),
     ShopItem('Nokia 8.3 5G', 'Silver', 9000000),
-    ShopItem('Vivo V20 SE', 'Grey', 5500000)
+    ShopItem('Vivo V20 SE', 'Grey', 5500000, 0)
 ]
 
 

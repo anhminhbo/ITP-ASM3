@@ -30,5 +30,7 @@ def feature_2(arr, item_obj):
 
     # Add each row inside table and print it out
     table.add_rows(table_list)
+    table.set_cols_dtype(["a", "a", "a", "a", "i"])
+    table.set_cols_width([2, 20, 10, 20, 10])
 
     print(table.draw())

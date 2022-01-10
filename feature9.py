@@ -9,6 +9,7 @@
 # Discount -> 1 property for Customer , 3=> 10%
 import util
 import feature5 as f5
+import db
 
 def membership_discount(accumulated_money, total_price=0):
     """
@@ -54,30 +55,33 @@ def membership_discount(accumulated_money, total_price=0):
 
     # Normal customer
     else:
+        print("You are currently not a member.")
         price = 0
 
     return total_price * price
 
 def input_cust_id():
-    cust_id = "A"
-    while not util.is_numbers(cust_id):
+    cust_id = ""
+    while not util.is_numbers(cust_id) or cust_id == "":
         cust_id = input("Input your customer id: ")
-        if not util.is_numbers(cust_id):
+        if not util.is_numbers(cust_id) or cust_id == "":
             print("Your input is invalid. Please input again.")
         else:
             break
     return int(cust_id)
 
 def feature_9():
-    cus_id = 10
-    while cus_id > f5.Customer.customer_counter:
+    cus_id = 99999999999999999
+
+    while cus_id > f5.Customer.customer_counter or cus_id < 1:
         cus_id = input_cust_id()
-        if cus_id > f5.Customer.customer_counter:
+        if cus_id > f5.Customer.customer_counter or cus_id < 1:
             print(f"Cannot find the customer with the id {cus_id}. Please input again.")
         else:
             break
-    cust_data = open("customer.txt", "r")
-    lines = cust_data.readlines()
-    cust_data.close()
+
+    lines = db.read_info("customer.txt")
+
     pro = lines[cus_id - 1].split(" | ")
+
     membership_discount(int(pro[4]))

@@ -21,10 +21,10 @@ def restock_condition(list_obj):
     :return: none
     """
 
-    goods = "A"
-    while has_letters(goods):
-        goods = input("Quantity of goods: ")
-        if has_letters(goods):
+    goods = ""
+    while has_letters(goods) or goods == "":
+        goods = input("Quantity of goods to be restocked: ")
+        if has_letters(goods) or goods == "":
             print("Your input is invalid. Please input again.")
             time.sleep(0.5)
         else:

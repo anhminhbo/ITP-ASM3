@@ -7,35 +7,23 @@
 # Last modified date:
 import random
 import re
-
+import db
 
 regex = "DIS..-......"
 
 
 def is_valid_voucher(voucher):
     is_match_form = re.fullmatch(regex, voucher)
-    is_stored = False
     if not is_match_form:
         return ["Your input is invalid. Please input again.", False]
 
     # Read database
-    vou_data = open("voucher.txt", "r")
-    vouchers = vou_data.readlines()
-    vou_data.close()
+    vouchers = db.read_info("voucher.txt")
 
-    # Checking if the input voucher is stored
-    for index in range(len(vouchers)-1):
-        if voucher + '\n' == vouchers[index]:
-            vouchers.pop(index)
-            is_stored = True
-            break
+    # Checking if the input voucher is stored and remove the used voucher
+    is_deleted = db.delete_info("voucher.txt", voucher, vouchers)
 
-    # Update database
-    vou_data = open("voucher.txt", "w")
-    vou_data.writelines(vouchers)
-    vou_data.close()
-
-    if not is_stored:
+    if not is_deleted:
         return ["This voucher is not exist. Please input another voucher.", False]
 
     return [True, True]
@@ -55,15 +43,12 @@ def feature_7():
     elif rand == 2:
         vou = "DIS50-" + series
     vou += "\n"
+
     # Store generated voucher in database
-    vou_data = open("voucher.txt", "r")
-    vouchers = vou_data.readlines()
-    vou_data.close()
+    vouchers = db.read_info("voucher.txt")
 
     vouchers.append(vou)
-    vou_data = open("voucher.txt", "w")
-    vou_data.writelines(vouchers)
-    vou_data.close()
+    db.write_info("voucher.txt", vouchers)
 
     return vou
 

@@ -10,27 +10,8 @@ import time
 import feature5 as feature5
 import feature7 as feature7
 import feature9 as feature9
-from util import is_valid_op, checkInt, is_numbers
+from util import is_valid_op, is_numbers
 import db
-
-
-class ShopItem:
-    shop_item_counter = 1
-
-    def __init__(self, name, color, price=0, quantity=10):
-        self.id = ShopItem.shop_item_counter
-        self.name = name
-        self.quantity = quantity
-        self.color = color
-        self.price = price
-        # Increment id by 1 everytime we create a new obj
-        ShopItem.shop_item_counter += 1
-
-
-list_shop_items = [
-    ShopItem('iphone11', 'red', 10000000),
-    ShopItem('iphone12', 'blue', 7000000)
-]
 
 
 def feature_6(arr, main_func, cus_list):

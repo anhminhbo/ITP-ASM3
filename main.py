@@ -76,7 +76,7 @@ Here are your options:
     4. Search item by item id and list all info of that specific item 
     5. List all info of a specific customer
     6. Placing orders
-    7. Receive a random voucher for new customer
+    7. Generate a random voucher
     8. Restock all the goods (notice if the goods is sufficient)
     9. Check membership and discount by customer id
     10. Add new member

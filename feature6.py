@@ -78,8 +78,14 @@ def feature_6(arr, main_func, cus_list):
                                     # Voucher discount
                                     check_vou = input("Do you want to use a voucher (Y/N)? ")
                                     if check_vou == "Y" or check_vou == "y":
-                                        vou = input("Input your voucher: ")
-                                        print(feature7.voucher_discount(vou))
+                                        temp = [True, False]
+                                        while not temp[1]:
+                                            vou = input("Input your voucher: ")
+                                            temp = feature7.is_valid_voucher(vou)
+                                            if not temp[1]:
+                                                print(temp[0])
+                                            else:
+                                                break
                                         total_price -= total_price * feature7.voucher_discount(vou)
 
                                     # Purchasing

@@ -8,6 +8,8 @@
 
 import time
 import feature5 as feature5
+import feature7 as feature7
+import feature9 as feature9
 from util import is_valid_op, checkInt
 
 
@@ -61,19 +63,36 @@ def feature_6(arr, main_func, cus_list):
                             for cus_obj in cus_list:
                                 if cus_obj.id == int(cust_id):
                                     cust_existed = True
-                                    print(f"Total price: {int(item_obj.price * buy_qtt)}")
-                                    print("Processing...")
-                                    time.sleep(1)
-                                    print(f"{cus_obj.first_name}'s order is successfully done.")
-                                    item_obj.quantity -= buy_qtt
+                                    total_price = int(item_obj.price * buy_qtt)
 
                                     # Update accumulated money in database
                                     cust_data = open("customer.txt", "r")
                                     lines = cust_data.readlines()
                                     cust_data.close()
-                                    pro = lines[cus_obj.id-1].split(" | ")
-                                    pro[4] = str(int(pro[4]) + item_obj.price * buy_qtt) + "\n"
-                                    lines[cus_obj.id-1] = " | ".join(pro)
+                                    pro = lines[cus_obj.id - 1].split(" | ")
+
+                                    # Checking the condition to upgrade membership
+                                    dis_amount = feature9.membership_discount(int(pro[4]), total_price)
+                                    total_price -= dis_amount
+
+                                    # Voucher discount
+                                    check_vou = input("Do you want to use a voucher (Y/N)? ")
+                                    if check_vou == "Y" or check_vou == "y":
+                                        vou = input("Input your voucher: ")
+                                        print(feature7.voucher_discount(vou))
+                                        total_price -= total_price * feature7.voucher_discount(vou)
+
+                                    # Purchasing
+                                    total_price = int(total_price)
+                                    print(f"Total price: {total_price}")
+                                    print("Processing...")
+                                    time.sleep(1)
+                                    print(f"{cus_obj.first_name}'s order is successfully done.")
+                                    item_obj.quantity -= buy_qtt
+
+                                    # Checking the accumulated money to upgrade membership
+                                    pro[4] = str(int(pro[4]) + total_price) + "\n"
+                                    lines[cus_obj.id - 1] = " | ".join(pro)
 
                                     cust_data = open("customer.txt", "w")
                                     cust_data.writelines(lines)
@@ -97,6 +116,3 @@ def feature_6(arr, main_func, cus_list):
     except ValueError:
         print('Item id or desired quantity is invalid.')
         is_valid_op(feature_6, main_func, arr, cus_list)
-
-
-# Set discount during placing order process

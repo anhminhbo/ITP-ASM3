@@ -8,21 +8,23 @@
 import random
 
 
-def generate_random_voucher():
+def feature_7():
     """
     :return: a random voucher
     """
-    dis_val = [0.1, 0.2, 0.5, 0.7]
     rand = random.randint(0, 3)
     series = str(random.randint(100000, 999999))
     if rand == 0:
-        return str
-    elif
-    elif
-    elif
+        return "DIS10-" + series
+    elif rand == 1:
+        return "DIS20-" + series
+    elif rand == 2:
+        return "DIS50-" + series
+
 
 def voucher_discount(vou):
     """
     :param vou: voucher
     :return: the discount value of that voucher
     """
+    return int(vou[3:5]) / 100

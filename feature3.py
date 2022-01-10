@@ -26,6 +26,6 @@ def feature_3(arr, main_func):
             feature_2(arr, item_obj)
 
     if not item_founded:
-        print(f'Can not find this item with name of {user_input_name}.')
+        print(f'Cannot find the item with the name {user_input_name}.')
 
-        is_valid_op(feature_3,main_func, arr)
+        is_valid_op(feature_3, main_func, arr)

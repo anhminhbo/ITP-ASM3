@@ -61,12 +61,10 @@ def feature_5(customer_list):
     :param customer_list:
     :return:
     """
-    for i in customer_list:
-        i.show_customer_info()
+    for customer in customer_list:
+        customer.show_customer_info()
 
 
 customers = refresh_customer_data()
 
 
-# Make a file to store customer info
-# Add 1 one property that is TotalProductsHasBeenBought

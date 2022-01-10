@@ -10,7 +10,7 @@ from feature2 import feature_2
 from util import is_valid_op
 
 
-def feature_4(arr,main_func):
+def feature_4(arr, main_func):
     """
     This function created to search item by name and show the information of the item
     :param arr: input list of items
@@ -28,9 +28,9 @@ def feature_4(arr,main_func):
                 feature_2(arr, item_obj)
 
         if not item_founded:
-            print(f'Can not find this item with id of {user_input_id}.')
-            is_valid_op(feature_4,main_func, arr)
+            print(f'Cannot find the item with the id {user_input_id}.')
+            is_valid_op(feature_4, main_func, arr)
 
     except ValueError:
         print('Invalid id.')
-        is_valid_op(feature_4,main_func, arr)
+        is_valid_op(feature_4, main_func, arr)

@@ -14,8 +14,9 @@ import feature3 as feature3
 import feature4 as feature4
 import feature5 as feature5
 import feature6 as feature6
-import feature9 as feature9
+import feature7 as feature7
 import feature8 as feature8
+import feature9 as feature9
 import feature10 as feature10
 
 
@@ -70,14 +71,14 @@ def main():
 Welcome to our Shop
 Here are your options:
     1. List all items 
-    2. List all info of a specific item  --> got embedded into feature3 and feature4, PLEASE DONT USE THIS
+    2. List all info of a specific item  --> got embedded into feature 3 and feature 4, PLEASE DON'T USE THIS
     3. Search item by name and list all info of that specific item 
     4. Search item by item id and list all info of that specific item 
     5. List all info of a specific customer
     6. Placing orders
-    7.
+    7. Receive a random voucher for new customer
     8. Restock all the goods (notice if the goods is sufficient)
-    9. Membership and discount
+    9. Check membership and discount by customer id
     10. Add new member
     11. End program
     """)
@@ -94,11 +95,6 @@ Here are your options:
         print("\nYour process is done. Returning back...")
         time.sleep(5)
         main()
-    # elif feature_number == 2:
-    #     feature2.feature_2(list_shop_items)
-    #     print("\nYour process is done. Returning back...")
-    #     time.sleep(5)
-    #     main()
     elif feature_number == 3:
         feature3.feature_3(list_shop_items, main)
         print("\nYour process is done. Returning back...")
@@ -119,21 +115,21 @@ Here are your options:
         print("\nYour process is done. Returning back...")
         time.sleep(5)
         main()
-    # elif feature_number == 7:
-    #     feature_7(list_shop_items)
-    #     print("\nYour process is done. Returning back...")
-    #     time.sleep(5)
-    #     main()
+    elif feature_number == 7:
+        print(f"Your voucher is: {feature7.feature_7()}")
+        print("\nYour process is done. Returning back...")
+        time.sleep(5)
+        main()
     elif feature_number == 8:
         feature8.restock_condition(list_shop_items)
         print("\nYour process is done. Returning back...")
         time.sleep(5)
         main()
-    # elif feature_number == 9:
-    #     feature_9(list_shop_items)
-    #     print("\nYour process is done. Returning back...")
-    #     time.sleep(5)
-    #     main()
+    elif feature_number == 9:
+        feature9.feature_9()
+        print("\nYour process is done. Returning back...")
+        time.sleep(5)
+        main()
     elif feature_number == 10:
         feature10.feature_10()
         print("\nYour process is done. Returning back...")

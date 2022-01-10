@@ -10,7 +10,7 @@ import time
 import feature5 as feature5
 import feature7 as feature7
 import feature9 as feature9
-from util import is_valid_op, checkInt
+from util import is_valid_op, checkInt, is_numbers
 import db
 
 
@@ -43,17 +43,25 @@ def feature_6(arr, main_func, cus_list):
     """
     item_existed = False
 
-    pro_id = input("Please input the item's id: ")
-    buy_qtt = input("Please input your desired quantity: ")
+    pro_id = "AAAA"
+    while not is_numbers(pro_id) or pro_id == "":
+        pro_id = input("Input product id: ")
+        if not is_numbers(pro_id) or pro_id == "":
+            print("Your input is invalid. Please input again.")
+            time.sleep(0.5)
+        else:
+            break
+    pro_id = int(pro_id)
 
-    is_valid_pro_id = checkInt(pro_id)
-    is_valid_buy_qtt = checkInt(buy_qtt)
-
-    # Handle when user input text not a number
-    while not is_valid_buy_qtt and not is_valid_pro_id:
-        print('Item id or desired quantity is invalid.')
-        is_valid_op(feature_6, main_func, arr, cus_list)
-
+    buy_qtt = "AAAA"
+    while not is_numbers(buy_qtt) or buy_qtt == "":
+        buy_qtt = input("Input your desired quantity: ")
+        if not is_numbers(buy_qtt) or buy_qtt == "":
+            print("Your input is invalid. Please input again.")
+            time.sleep(0.5)
+        else:
+            break
+    buy_qtt = int(buy_qtt)
 
     print("Checking for availability of product...")
     time.sleep(1)
@@ -66,57 +74,57 @@ def feature_6(arr, main_func, cus_list):
             else:
                 def input_cust_id():
                     cust_existed = False
-                    cust_id = input("The number of your desired product is sufficient."
-                                    " Please input your customer id: ")
-                    is_cust_id_int = checkInt(cust_id)
-                    if is_cust_id_int:
-                        for cus_obj in cus_list:
-                            if cus_obj.id == int(cust_id):
-                                cust_existed = True
-                                total_price = int(item_obj.price * buy_qtt)
+                    notice = "The number of your desired product is sufficient. Please input your customer id: "
+                    cust_id = "AAAA"
+                    while not is_numbers(cust_id) or cust_id == "":
+                        cust_id = input(notice)
+                        if not is_numbers(cust_id) or cust_id == "":
+                            print("Your input is invalid. Please input again.")
+                        else:
+                            break
+                    cust_id = int(cust_id)
+                    for cus_obj in cus_list:
+                        if cus_obj.id == int(cust_id):
+                            cust_existed = True
+                            total_price = int(item_obj.price * buy_qtt)
 
-                                # Update accumulated money in database
-                                lines = db.read_info("customer.txt")
-                                pro = lines[cus_obj.id - 1].split(" | ")
+                            # Update accumulated money in database
+                            lines = db.read_info("customer.txt")
+                            pro = lines[cus_obj.id - 1].split(" | ")
 
-                                # Checking the condition to upgrade membership
-                                dis_amount = feature9.membership_discount(int(pro[4]), total_price)
-                                total_price -= dis_amount
+                            # Checking the condition to upgrade membership
+                            dis_amount = feature9.membership_discount(int(pro[4]), total_price)
+                            total_price -= dis_amount
 
-                                # Voucher discount
-                                check_vou = input("Do you want to use a voucher (Y/N)? ")
-                                if check_vou == "Y" or check_vou == "y":
-                                    temp = [True, False]
-                                    while not temp[1]:
-                                        vou = input("Input your voucher: ")
-                                        temp = feature7.is_valid_voucher(vou)
-                                        if not temp[1]:
-                                            print(temp[0])
-                                        else:
-                                            break
-                                    total_price -= total_price * feature7.voucher_discount(vou)
+                            # Voucher discount
+                            check_vou = input("Do you want to use a voucher (Y/N)? ")
+                            if check_vou == "Y" or check_vou == "y":
+                                temp = [True, False]
+                                while not temp[1]:
+                                    vou = input("Input your voucher: ")
+                                    temp = feature7.is_valid_voucher(vou)
+                                    if not temp[1]:
+                                        print(temp[0])
+                                    else:
+                                        break
+                                total_price -= total_price * feature7.voucher_discount(vou)
 
-                                # Purchasing
-                                total_price = int(total_price)
-                                print(f"Total price: {total_price}")
-                                print("Processing...")
-                                time.sleep(1)
-                                print(f"{cus_obj.first_name}'s order is successfully done.")
-                                item_obj.quantity -= buy_qtt
+                            # Purchasing
+                            total_price = int(total_price)
+                            print(f"Total price: {total_price}")
+                            print("Processing...")
+                            time.sleep(1)
+                            print(f"{cus_obj.first_name}'s order is successfully done.")
+                            item_obj.quantity -= buy_qtt
 
-                                # Checking the accumulated money to upgrade membership
-                                pro[4] = str(int(pro[4]) + total_price) + "\n"
-                                lines[cus_obj.id - 1] = " | ".join(pro)
+                            # Checking the accumulated money to upgrade membership
+                            pro[4] = str(int(pro[4]) + total_price) + "\n"
+                            lines[cus_obj.id - 1] = " | ".join(pro)
+                            db.write_info("customer.txt", lines)
+                            feature5.customers = feature5.refresh_customer_data()
 
-                                db.write_info("customer.txt", lines)
-
-                                feature5.customers = feature5.refresh_customer_data()
-
-                        if not cust_existed:
-                            print(f'your customer id of {cust_id} does not exist.')
-                            is_valid_op(input_cust_id, main_func)
-                    else:
-                        print('Invalid customer id.')
+                    if not cust_existed:
+                        print(f'your customer id of {cust_id} does not exist.')
                         is_valid_op(input_cust_id, main_func)
 
                 input_cust_id()
@@ -125,4 +133,3 @@ def feature_6(arr, main_func, cus_list):
     if not item_existed:
         print(f'This item with id of {pro_id} not exist in the shop.')
         is_valid_op(feature_6, main_func, arr, cus_list)
-

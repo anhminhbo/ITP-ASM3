@@ -2,7 +2,7 @@
 # Course: COSC2429 Introduction to Programming
 # Semester: 2021C
 # Assignment: 3
-# Author: Nguyen Nguyen Khuong (s3924577)
+# Author: Nguyen Nguyen Khuong (s3924577) and Truong Hoang Tuan Kiet (s3926873)
 # Created date:
 # Last modified date:
 
@@ -32,6 +32,7 @@ list_shop_items = [
 
 def feature_6(arr, main_func, cus_list):
     """
+    This function created to fill and show the placing orders of the customer
     :param main_func:
     :param cus_list: input list of customers
     :param arr: input list of items
@@ -96,3 +97,6 @@ def feature_6(arr, main_func, cus_list):
     except ValueError:
         print('Item id or desired quantity is invalid.')
         is_valid_op(feature_6, main_func, arr, cus_list)
+
+
+# Set discount during placing order process

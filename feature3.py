@@ -2,7 +2,7 @@
 # Course: COSC2429 Introduction to Programming
 # Semester: 2021C
 # Assignment: 3
-# Author: Nguyen Cuong Anh Minh (s3931605)
+# Author: Nguyen Nguyen Khuong (s3924577)
 # Created date:
 # Last modified date:
 
@@ -12,7 +12,7 @@ from util import is_valid_op
 
 def feature_3(arr, main_func):
     """
-    Search item by name and show the info of the item
+    This function created to search item by name and show the information of the item
     :param arr: input list of items
     :param main_func: main function of the program
     :return: none

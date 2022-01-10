@@ -96,3 +96,6 @@ def feature_6(arr, main_func, cus_list):
     except ValueError:
         print('Item id or desired quantity is invalid.')
         is_valid_op(feature_6, main_func, arr, cus_list)
+
+
+# Set discount during placing order process

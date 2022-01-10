@@ -7,10 +7,18 @@
 # Last modified date:
 
 import time
+import re
 import feature5 as feature5
 import feature7 as feature7
 import feature9 as feature9
 from util import is_valid_op, checkInt
+
+
+regex = "DIS..-......"
+
+
+def is_valid_voucher(voucher):
+    return re.fullmatch(regex, voucher)
 
 
 class ShopItem:
@@ -78,8 +86,13 @@ def feature_6(arr, main_func, cus_list):
                                     # Voucher discount
                                     check_vou = input("Do you want to use a voucher (Y/N)? ")
                                     if check_vou == "Y" or check_vou == "y":
-                                        vou = input("Input your voucher: ")
-                                        print(feature7.voucher_discount(vou))
+                                        vou = "a"
+                                        while not is_valid_voucher(vou):
+                                            vou = input("Input your voucher: ")
+                                            if not is_valid_voucher(vou):
+                                                print("Your input is invalid. Please input again.")
+                                            else:
+                                                break
                                         total_price -= total_price * feature7.voucher_discount(vou)
 
                                     # Purchasing

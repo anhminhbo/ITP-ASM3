@@ -16,9 +16,9 @@ def is_valid_op(fn, main_func, *args):
     :return:
     """
     is_valid_operation = False
-    user_choice = input('Do you want to try again?(y/n): ')
+    user_choice = input('Do you want to try again (Y/N)? ')
     while not is_valid_operation:
-        if user_choice == 'y':
+        if user_choice == 'y' or user_choice == 'Y':
             is_valid_operation = True
             if len(args) == 1:
                 fn(args[0], main_func)
@@ -29,13 +29,13 @@ def is_valid_op(fn, main_func, *args):
             elif len(args) == 0:
                 fn()
 
-        elif user_choice == 'n':
+        elif user_choice == 'n' or user_choice == 'N':
             is_valid_operation = True
             print("Processing...")
             time.sleep(5)
             main_func()
         else:
-            user_choice = input('Invalid operation, please input "y" to try again or "n" to back to the main shop: ')
+            user_choice = input('Invalid operation, please input "Y" to try again or "N" to back to the main shop: ')
 
 
 def checkInt(text):

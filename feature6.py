@@ -14,25 +14,6 @@ from util import is_valid_op, checkInt, is_numbers
 import db
 
 
-class ShopItem:
-    shop_item_counter = 1
-
-    def __init__(self, name, color, price=0, quantity=10):
-        self.id = ShopItem.shop_item_counter
-        self.name = name
-        self.quantity = quantity
-        self.color = color
-        self.price = price
-        # Increment id by 1 everytime we create a new obj
-        ShopItem.shop_item_counter += 1
-
-
-list_shop_items = [
-    ShopItem('iphone11', 'red', 10000000),
-    ShopItem('iphone12', 'blue', 7000000)
-]
-
-
 def feature_6(arr, main_func, cus_list):
     """
     This function created to fill and show the placing orders of the customer
@@ -124,12 +105,12 @@ def feature_6(arr, main_func, cus_list):
                             feature5.customers = feature5.refresh_customer_data()
 
                     if not cust_existed:
-                        print(f'your customer id of {cust_id} does not exist.')
+                        print(f'Your customer id of {cust_id} does not exist.')
                         is_valid_op(input_cust_id, main_func)
 
                 input_cust_id()
                 break
 
     if not item_existed:
-        print(f'This item with id of {pro_id} not exist in the shop.')
+        print(f'The item with id {pro_id} not exist in the shop.')
         is_valid_op(feature_6, main_func, arr, cus_list)

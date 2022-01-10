@@ -2,7 +2,7 @@
 # Course: COSC2429 Introduction to Programming
 # Semester: 2021C
 # Assignment: 3
-# Author: Nguyen Cuong Anh Minh (s3931605)
+# Author: Vu Quoc Gia Quan (s3927120)
 # Created date:
 # Last modified date:
 
@@ -11,7 +11,7 @@ from texttable import Texttable
 
 def feature_2(arr, item_obj):
     """
-    show specific item info
+    This function created to show specific item information
     :param arr: input list of items
     :param item_obj: input item object from the shop items
     :return: none

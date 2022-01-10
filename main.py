@@ -63,7 +63,7 @@ list_shop_items = [
 
 def main():
     """
-    main program will be execute here
+    The main program will be executed here
     :return: none
     """
     print("""

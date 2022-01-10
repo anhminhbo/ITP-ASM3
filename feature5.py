@@ -2,7 +2,7 @@
 # Course: COSC2429 Introduction to Programming
 # Semester: 2021C
 # Assignment: 3
-# Author: Nguyen Nguyen Khuong (s3924577)
+# Author: Nguyen Cuong Anh Minh (s3931605) and Vu Quoc Gia Quan (s3927120)
 # Created date:
 # Last modified date:
 
@@ -39,6 +39,10 @@ class Customer:
 
 
 def refresh_customer_data():
+    """
+    This function created to refresh the customer's data
+    :return: customer data
+    """
     cust = []
     reset_id()
     cus_data = open("customer.txt", "r")
@@ -52,6 +56,11 @@ def refresh_customer_data():
 
 
 def feature_5(customer_list):
+    """
+    This function created to show the customer's information
+    :param customer_list:
+    :return:
+    """
     for i in customer_list:
         i.show_customer_info()
 

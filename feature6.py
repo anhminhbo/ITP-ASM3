@@ -34,21 +34,24 @@ def feature_6(arr, main_func, cus_list):
             break
     pro_id = int(pro_id)
 
-    buy_qtt = "AAAA"
-    while not is_numbers(buy_qtt) or buy_qtt == "":
-        buy_qtt = input("Input your desired quantity: ")
-        if not is_numbers(buy_qtt) or buy_qtt == "":
-            print("Your input is invalid. Please input again.")
-            time.sleep(0.5)
-        else:
-            break
-    buy_qtt = int(buy_qtt)
-
-    print("Checking for availability of product...")
-    time.sleep(1)
     for item_obj in arr:
         if item_obj.id == pro_id:
             item_existed = True
+
+            # Now ask the user for how many products the user want to buy
+            buy_qtt = "AAAA"
+            while not is_numbers(buy_qtt) or buy_qtt == "" or buy_qtt == "0":
+                buy_qtt = input("Input your desired quantity: ")
+                if not is_numbers(buy_qtt) or buy_qtt == "" or buy_qtt == "0":
+                    print("Your input is invalid. Please input again.")
+                    time.sleep(0.5)
+                else:
+                    break
+            buy_qtt = int(buy_qtt)
+
+            print("Checking for availability of product...")
+            time.sleep(1)
+
             if buy_qtt > item_obj.quantity:
                 print(f'The quantity of goods is not enough, only {item_obj.quantity} left.')
                 is_valid_op(feature_6, main_func, arr, cus_list)

@@ -74,7 +74,7 @@ Here are your options:
     2. List all info of a specific item  --> got embedded into feature 3 and feature 4, PLEASE DON'T USE THIS
     3. Search item by name and list all info of that specific item 
     4. Search item by item id and list all info of that specific item 
-    5. List all info of a specific customer
+    5. List all info of stored customers
     6. Placing orders
     7. Generate a random voucher
     8. Restock all the goods (notice if the goods is sufficient)

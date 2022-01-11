@@ -20,7 +20,6 @@ def restock_condition(list_obj):
     :param list_obj: list of goods
     :return: none
     """
-
     goods = ""
     while has_letters(goods) or goods == "":
         goods = input("Quantity of goods to be restocked: ")

@@ -3,16 +3,23 @@
 # Semester: 2021C
 # Assignment: 3
 # Author: Nguyen Cuong Anh Minh (s3931605)
-# Created date:
-# Last modified date:
+# Created date: 10/01/2022
+# Last modified date: 11/01/2022
 import random
 import re
 import db
 
+
+# Create a regex to validate voucher
 regex = "DIS..-......"
 
 
 def is_valid_voucher(voucher):
+    """
+    This function is used to validate voucher
+    :param voucher: input voucher
+    :return: a sentence to notice for customer and return if the voucher in database
+    """
     is_match_form = re.fullmatch(regex, voucher)
     if not is_match_form:
         return ["Your input is invalid. Please input again.", False]
@@ -31,11 +38,15 @@ def is_valid_voucher(voucher):
 
 def feature_7():
     """
+    This function is used to generate a random voucher with 3 value of discount: 10%, 20% and 50%
     :return: a random voucher
     """
+    # Initialize
     rand = random.randint(0, 3)
     series = str(random.randint(100000, 999999))
     vou = ""
+
+    # Random voucher
     if rand == 0:
         vou = "DIS10-" + series
     elif rand == 1:
@@ -55,6 +66,7 @@ def feature_7():
 
 def voucher_discount(vou):
     """
+    This function return the discount value contained in the input voucher
     :param vou: voucher
     :return: the discount value of that voucher
     """

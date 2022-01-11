@@ -11,6 +11,7 @@ import util
 import feature5 as f5
 import db
 
+
 def membership_discount(accumulated_money, total_price=0):
     """
     This function created to upgrade the customer's membership and discount
@@ -20,7 +21,8 @@ def membership_discount(accumulated_money, total_price=0):
     """
     total_value = accumulated_money + total_price
 
-    # Platinum member
+    # If total money the customer purchase is equal or greater than 100000000
+    # Promoted to Platinum Member
     if accumulated_money >= 100000000:
         print("Platinum member. Discount: 15%")
         price = 0.15
@@ -31,7 +33,8 @@ def membership_discount(accumulated_money, total_price=0):
         print("Congratulations, you have been promoted to platinum member!")
         price = 0.15
 
-    # Gold member
+    # If total money the customer purchase is equal or greater than 70000000
+    # Promoted to Gold Member
     elif accumulated_money >= 70000000:
         print("Gold member. Discount: 10%")
         price = 0.1
@@ -42,7 +45,8 @@ def membership_discount(accumulated_money, total_price=0):
         print("Congratulations, you have been promoted to gold member!")
         price = 0.1
 
-    # Silver member
+    # If total money the customer purchase is equal or greater than 30000000
+    # Promoted to Silver Member
     elif accumulated_money >= 30000000:
         print("Silver member. Discount: 5%")
         price = 0.05
@@ -60,7 +64,12 @@ def membership_discount(accumulated_money, total_price=0):
 
     return total_price * price
 
+
 def input_cust_id():
+    """
+    This function created to input the user's id
+    :return: customer id
+    """
     cust_id = ""
     while not util.is_numbers(cust_id) or cust_id == "":
         cust_id = input("Input your customer id: ")
@@ -70,7 +79,12 @@ def input_cust_id():
             break
     return int(cust_id)
 
+
 def feature_9():
+    """
+    This function created to check if the customer id is existed
+    :return: none
+    """
     cus_id = 99999999999999999
 
     while cus_id > f5.Customer.customer_counter or cus_id < 1:

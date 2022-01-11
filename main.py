@@ -2,7 +2,7 @@
 # Course: COSC2429 Introduction to Programming
 # Semester: 2021C
 # Assignment: 3
-# Author: SGS_Group11_3
+# Author: SGS_G03_11
 # Created date:
 # Last modified date:
 

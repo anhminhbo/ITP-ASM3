@@ -9,6 +9,10 @@
 import time
 
 
+def is_yes_or_no(temp):
+    return temp == "Y" or temp == "y" or temp == "N" or temp == "n"
+
+
 # Check if the string contains numbers
 def is_numbers(string):
     """

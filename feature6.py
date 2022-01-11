@@ -10,7 +10,7 @@ import time
 import feature5 as feature5
 import feature7 as feature7
 import feature9 as feature9
-from util import is_valid_op, is_numbers
+from util import is_valid_op, is_numbers, is_yes_or_no
 import db
 
 
@@ -78,7 +78,16 @@ def feature_6(arr, main_func, cus_list):
                             total_price -= dis_amount
 
                             # Voucher discount
-                            check_vou = input("Do you want to use a voucher (Y/N)? ")
+                            # NOTICE: this will discount on the price after discount of membership
+                            check_vou = None
+                            while not is_yes_or_no(check_vou):
+                                if not is_yes_or_no(check_vou):
+                                    if check_vou is not None:
+                                        print("Your input is invalid. Please input again.")
+                                    check_vou = input("Do you want to use a voucher (Y/N)? ")
+                                else:
+                                    break
+
                             if check_vou == "Y" or check_vou == "y":
                                 temp = [True, False]
                                 while not temp[1]:

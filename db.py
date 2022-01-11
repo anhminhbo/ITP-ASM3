@@ -44,9 +44,8 @@ def delete_info(db_schema, data, lines):
     """
 
     data_is_existed = False
-
     # Checking if the input data is stored and remove the used data
-    for index in range(len(lines) - 1):
+    for index in range(len(lines)):
         if data + '\n' == lines[index]:
             lines.pop(index)
             data_is_existed = True

@@ -1,0 +1,5 @@
+helper==2.5.0
+prettytable==2.5.0
+PyYAML==6.0
+texttable==1.6.4
+wcwidth==0.2.5

@@ -55,7 +55,7 @@ def membership_discount(accumulated_money, total_price=0):
 
     # Normal customer
     else:
-        print("You are currently not a member.")
+        print("You did not acquire a membership. Discount: 0%")
         price = 0
 
     return total_price * price

@@ -105,12 +105,12 @@ def feature_6(arr, main_func, cus_list):
                             feature5.customers = feature5.refresh_customer_data()
 
                     if not cust_existed:
-                        print(f'your customer id of {cust_id} does not exist.')
+                        print(f'Your customer id of {cust_id} does not exist.')
                         is_valid_op(input_cust_id, main_func)
 
                 input_cust_id()
                 break
 
     if not item_existed:
-        print(f'This item with id of {pro_id} not exist in the shop.')
+        print(f'The item with id {pro_id} not exist in the shop.')
         is_valid_op(feature_6, main_func, arr, cus_list)

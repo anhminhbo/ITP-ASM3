@@ -17,8 +17,15 @@ def feature_3(arr, main_func):
     :param main_func: main function of the program
     :return: none
     """
-    # Input user search
+    # Input user search and check if user input blank or not
     user_input_name = input("Please input the item's name: ")
+    while user_input_name == "":
+        if user_input_name == "":
+            print("Your input is invalid. Please input again.")
+            user_input_name = input("Please input the item's name: ")
+        else:
+            break
+
     item_founded = False
 
     list_of_item = []

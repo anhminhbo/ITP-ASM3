@@ -10,7 +10,7 @@ import time
 import feature5 as feature5
 import feature7 as feature7
 import feature9 as feature9
-from util import is_valid_op, checkInt, is_numbers
+from util import is_valid_op, is_numbers
 import db
 
 

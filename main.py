@@ -85,11 +85,13 @@ Here are your options:
 
     feature_number = 0
 
+    # Handle if user input wrong format
     try:
         feature_number = int(input("Please input your number that you would like to process with: "))
     except ValueError:
         main()
 
+    # Run the feature that the user input
     if feature_number == 1:
         feature1.feature_1(list_shop_items)
         print("\nYour process is done. Returning back...")

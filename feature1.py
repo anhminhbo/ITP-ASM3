@@ -3,8 +3,8 @@
 # Semester: 2021C
 # Assignment: 3
 # Author: Nguyen Cuong Anh Minh (s3931605)
-# Created date:
-# Last modified date:
+# Created date: 28/12/2021
+# Last modified date: 03/01/2022
 from texttable import Texttable
 
 

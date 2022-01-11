@@ -3,8 +3,8 @@
 # Semester: 2021C
 # Assignment: 3
 # Author: Vu Quoc Gia Quan (s3927120)
-# Created date:
-# Last modified date:
+# Created date: 30/12/2021
+# Last modified date: 09/01/2022
 
 from texttable import Texttable
 

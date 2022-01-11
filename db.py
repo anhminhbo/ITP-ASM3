@@ -1,3 +1,11 @@
+# RMIT University Vietnam
+# Course: COSC2429 Introduction to Programming
+# Semester: 2021C
+# Assignment: 3
+# Author: Nguyen Cuong Anh Minh(s3927120) and Nguyen Nguyen Khuong (s3924577)
+# Created date: 28/12/2021
+# Last modified date: 11/01/2022
+
 def read_info(db_schema):
     """
     This function read info from according dbSchema text file
@@ -20,7 +28,7 @@ def write_info(db_schema, lines):
     :return: none
     """
 
-    # Add db into database
+    # Add data into database
     db = open(db_schema, "w")
     db.writelines(lines)
     db.close()
@@ -37,7 +45,7 @@ def delete_info(db_schema, data, lines):
 
     data_is_existed = False
 
-    # Checking if the input voucher is stored and remove the used voucher
+    # Checking if the input data is stored and remove the used data
     for index in range(len(lines) - 1):
         if data + '\n' == lines[index]:
             lines.pop(index)

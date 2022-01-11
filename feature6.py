@@ -54,6 +54,7 @@ def feature_6(arr, main_func, cus_list):
                 is_valid_op(feature_6, main_func, arr, cus_list)
             else:
                 def input_cust_id():
+                    global vou
                     cust_existed = False
                     notice = "The number of your desired product is sufficient. Please input your customer id: "
                     cust_id = "AAAA"

@@ -3,8 +3,8 @@
 # Semester: 2021C
 # Assignment: 3
 # Author: Truong Hoang Tuan Kiet (s3926873)
-# Created date:
-# Last modified date:
+# Created date: 10/01/2022
+# Last modified date: 11/01/2022
 
 # Discount -> 1 property for Customer , 3=> 10%
 import util

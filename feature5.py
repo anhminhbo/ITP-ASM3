@@ -48,7 +48,7 @@ def refresh_customer_data():
     cus_data = open("customer.txt", "r")
     lines = cus_data.readlines()
     for line in lines:
-        # read properties
+        # Read properties from database
         pro = line.split(" | ")
         cust.append(Customer(pro[0], pro[1], pro[2], pro[3], int(pro[4])))
     cus_data.close()
@@ -66,5 +66,3 @@ def feature_5(customer_list):
 
 
 customers = refresh_customer_data()
-
-

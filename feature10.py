@@ -3,8 +3,8 @@
 # Semester: 2021C
 # Assignment: 3
 # Author: Nguyen Nguyen Khuong (s3924577)
-# Created date:
-# Last modified date:
+# Created date: 06/01/2022
+# Last modified date: 11/01/2022
 
 import time
 import feature5 as feature5
@@ -15,13 +15,22 @@ import db
 # Make a regular expression for validating an Email
 regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
 
-# Define a function for validating an Email
 def is_valid_email(email):
-    # pass the regular expression and the string into the fullmatch() method
+    """
+    This function is to validate email
+    :param email:
+    :return:
+    """
+    # Pass the regular expression and the string into the fullmatch() method
     return re.fullmatch(regex, email)
 
 
 def is_full_name(string):
+    """
+    This function is to check if the input string is full name
+    :param string:
+    :return:
+    """
     temp = string.split(" ")
     return len(temp) >= 2
 
@@ -65,14 +74,11 @@ def feature_10():
             break
 
     # Convert data
-
     data = name + " | " + email_add + " | " + ship_add + " | " + ph_num + " | 0 \n"
 
     # Store new customer info by reading old data and then update
     lines = db.read_info("customer.txt")
-
     lines.append(data)
-
     db.write_info("customer.txt", lines)
 
     # Refresh the database
@@ -85,6 +91,3 @@ def feature_10():
         for i in feature5.customers:
             if i.id == feature5.take_id():
                 i.show_customer_info()
-
-
-# feature_10()

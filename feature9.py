@@ -72,16 +72,12 @@ def input_cust_id():
 
 def feature_9():
     cus_id = 99999999999999999
-
     while cus_id > f5.Customer.customer_counter or cus_id < 1:
         cus_id = input_cust_id()
         if cus_id > f5.Customer.customer_counter or cus_id < 1:
             print(f"Cannot find the customer with the id {cus_id}. Please input again.")
         else:
             break
-
     lines = db.read_info("customer.txt")
-
     pro = lines[cus_id - 1].split(" | ")
-
     membership_discount(int(pro[4]))

@@ -1,9 +1,16 @@
+# RMIT University Vietnam
+# Course: COSC2429 Introduction to Programming
+# Semester: 2021C
+# Assignment: 3
+# Author: Nguyen Cuong Anh Minh (s3931605)
+# Created date:
+# Last modified date:
 from texttable import Texttable
 
 
 def feature_1(arr):
     """
-    show all the items' name in the shop
+    This function created to show all the item's name in the shop
     :param arr: input list of items
     :return: none
     """
@@ -29,5 +36,7 @@ def feature_1(arr):
 
     # Each item in table_list is a row in the table
     table.add_rows(table_list)
+    table.set_cols_dtype(["a", "a", "a", "a", "i"])
+    table.set_cols_width([2, 20, 10, 20, 10])
 
     print(table.draw())

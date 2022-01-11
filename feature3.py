@@ -1,10 +1,18 @@
+# RMIT University Vietnam
+# Course: COSC2429 Introduction to Programming
+# Semester: 2021C
+# Assignment: 3
+# Author: Nguyen Nguyen Khuong (s3924577)
+# Created date:
+# Last modified date:
+
 from feature2 import feature_2
 from util import is_valid_op
 
 
 def feature_3(arr, main_func):
     """
-    Search item by name and show the info of the item
+    This function created to search item by name and show the information of the item
     :param arr: input list of items
     :param main_func: main function of the program
     :return: none
@@ -12,12 +20,15 @@ def feature_3(arr, main_func):
     user_input_name = input("Please input the item's name: ")
     item_founded = False
 
+    list_of_item = []
+
     for item_obj in arr:
-        if item_obj.name == user_input_name:
+        if user_input_name in item_obj.name:
             item_founded = True
-            feature_2(arr, item_obj)
+            list_of_item.append(item_obj)
 
     if not item_founded:
-        print(f'Can not find this item with name of {user_input_name}.')
-
-        is_valid_op(feature_3,main_func, arr)
+        print(f'Cannot find the item with the search: {user_input_name}.')
+        is_valid_op(feature_3, main_func, arr)
+    else:
+        feature_2(arr, None, list_of_item)

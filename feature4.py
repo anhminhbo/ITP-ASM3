@@ -25,7 +25,7 @@ def feature_4(arr, main_func):
         for item_obj in arr:
             if item_obj.id == user_input_id:
                 item_founded = True
-                feature_2(arr, item_obj)
+                feature_2(arr, item_obj, [])
 
         if not item_founded:
             print(f'Cannot find the item with the id {user_input_id}.')

@@ -20,12 +20,15 @@ def feature_3(arr, main_func):
     user_input_name = input("Please input the item's name: ")
     item_founded = False
 
+    list_of_item = []
+
     for item_obj in arr:
-        if item_obj.name == user_input_name:
+        if user_input_name in item_obj.name:
             item_founded = True
-            feature_2(arr, item_obj)
+            list_of_item.append(item_obj)
 
     if not item_founded:
-        print(f'Cannot find the item with the name {user_input_name}.')
-
+        print(f'Cannot find the item with the search: {user_input_name}.')
         is_valid_op(feature_3, main_func, arr)
+    else:
+        feature_2(arr, None, list_of_item)
